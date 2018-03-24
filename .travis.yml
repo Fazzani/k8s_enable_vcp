@@ -11,6 +11,6 @@ before_install:
 deploy:
   provider: script
   skip_cleanup: true
-  script: bash docker_push.sh
+  script: bash docker_push.sh $imagename
   on:
     branch: master

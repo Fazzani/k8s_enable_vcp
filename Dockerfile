@@ -1,5 +1,5 @@
 FROM gliderlabs/alpine
-MAINTAINER containers@vmware.com
+LABEL maintainer="fazzani.heni@outlook.fr"
 
 RUN apk add --no-cache bash jq py-pip openssl go git libc-dev
 ENV GOPATH /go

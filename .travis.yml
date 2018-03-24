@@ -5,13 +5,13 @@ services:
 before_install:
   - imagename="synker/k8s_enable_vcp"
   - docker build -t $imagename:latest .
-  - docker build -t $imagename:$DOCKER_BUILD .
-  - docker run -idt $imagename:$DOCKER_BUILD
+  - docker build -t $imagename:$TRAVIS_BUILD_NUMBER .
+  - docker run -idt $imagename:$TRAVIS_BUILD_NUMBER
   - docker ps -a
 
 deploy:
   provider: script
   skip_cleanup: true
-  script: bash docker_push.sh $imagename:$DOCKER_BUILD && bash docker_push.sh $imagename:latest 
+  script: bash docker_push.sh $imagename:$TRAVIS_BUILD_NUMBER && bash docker_push.sh $imagename:latest 
   on:
     branch: master

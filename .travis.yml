@@ -9,7 +9,7 @@ env:
   - secure: hp0sS1g6DjYirQJitzhOYTbA2iE5u9qBM7KFLREAU7Czu5/87i0wzTwxNU4R0NznvUCjmVeLxTa+n0y0vSehAtKn7R1kvqudvHxVixgPUtHAmZRkFeiNbxi2iJGffPEWaYkExJtHbmV6tFpBTYwMyyVRzE2X5NCJ89U9kH2VEJ8GWday4ZSd3UblLwPROWskNapSkLepKyXfKu30XHbeUVbmyQDuzrc8sH9HX3hkHJwpYKduj5lCjOgTcmUPacb1Mt84e8GAhBMGCdxazeEBCsP3SDmYytik488eXSMmM0xfMuaUUNeyYLBG44+Cflg4VEJe6+U5I8DZ27kxNCYgwSE1FELbqvNoqDvhlHRbCxVYjAefZBc4f+pTnhF2Ywmi3/8OpVgj/U0MLsqBNrPI8HpkjUa5OUPxXXSCVZNfYUtdRIFoaHgRqqkRPI7Xacx2OfJnfLa1JQ4u6TkDCbP6WCINxk/qkrBWD2x+jjzhdp2+Dv2Vg8Z48Ywc8NDjDz7PHPPNAhJ/PcHPxPH/Szm2JOqeeh1d1InB+RFqlfGZySmPqBUoAVTMp06AJGxQ5YpJooT8hqZItWX6sEYrEPKu5CNrWYdO+aDXKVWe+kktOFtCorO305aWlHCzIKzKXr3vBA6LsA8kUuPc3AZsM5jGodbf7ECfD4H/coQoRgNSEPw=
 
 before_install:
-  - imagename="synker/k8s_enable_vpc:latest"
+  - imagename="synker/k8s_enable_vcp:latest"
   - docker build -t $imagename .
   - docker run -idt $imagename
   - docker ps -a

@@ -5,12 +5,14 @@ services:
 before_install:
   - imagename="synker/k8s_enable_vcp:latest"
   - docker build -t $imagename .
+  - imagename2="synker/k8s_enable_vcp:$DOCKER_BUILD"
+  - docker build -t $imagename2 .
   - docker run -idt $imagename
   - docker ps -a
 
 deploy:
   provider: script
   skip_cleanup: true
-  script: bash docker_push.sh $imagename
+  script: bash docker_push.sh $imagename && bash docker_push.sh $imagename2 
   on:
     branch: master
